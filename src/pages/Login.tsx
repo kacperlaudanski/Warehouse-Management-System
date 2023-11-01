@@ -1,7 +1,31 @@
 import Button from "../components/Button";
 import Input from "../components/Input";
+import { useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const navigate = useNavigate();
+
+  function emailHandler(event: React.ChangeEvent<HTMLInputElement>) {
+    setEmail(event.target.value);
+  }
+
+  function passwordHandler(event: React.ChangeEvent<HTMLInputElement>) {
+    setPassword(event.target.value);
+  }
+
+  async function loginHandler() {
+    try {
+      signInWithEmailAndPassword(auth, email, password);
+      await navigate("/main");
+    } catch (err) {
+      console.error(err);
+    }
+  }
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-36 lg:px-8">
@@ -40,6 +64,7 @@ export default function Login() {
                   name="email"
                   type="email"
                   autoComplete="email"
+                  onChange={emailHandler}
                   required
                 />
               </div>
@@ -69,14 +94,15 @@ export default function Login() {
                   name="password"
                   type="password"
                   autoComplete="current-password"
+                  onChange={passwordHandler}
                   required
                 />
               </div>
             </div>
             <div>
-                <Button type="submit" form="login">
-                   Sign In
-                </Button>
+              <Button type="submit" form="login" onClick={loginHandler}>
+                Sign In
+              </Button>
             </div>
           </form>
         </div>
