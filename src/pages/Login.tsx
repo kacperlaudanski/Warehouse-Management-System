@@ -1,14 +1,16 @@
 import Button from "../components/Button";
 import Input from "../components/Input";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/auth-context";
 
 export default function Login() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const navigate = useNavigate();
+  const {dispatch} = useContext(AuthContext)
 
   function emailHandler(event: React.ChangeEvent<HTMLInputElement>) {
     setEmail(event.target.value);
@@ -21,6 +23,7 @@ export default function Login() {
   async function loginHandler() {
     try {
       signInWithEmailAndPassword(auth, email, password);
+      dispatch({type: "LOGIN", payload: email})
       await navigate("/main");
     } catch (err) {
       console.error(err);
@@ -49,7 +52,7 @@ export default function Login() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6" action="#" method="POST">
+          <form className="space-y-6">
             <div>
               <label
                 htmlFor="email"
