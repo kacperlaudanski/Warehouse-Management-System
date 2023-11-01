@@ -1,12 +1,49 @@
-import { useState } from "react";
+import { useReducer, useState } from "react";
 import { Switch } from "@headlessui/react";
 import { ChevronDown } from "lucide-react";
 import joinClasses from "../utilities/joinClasses";
 import Input from "../components/Input";
 import Button from "../components/Button";
+import { auth } from "../firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { registerReducer } from "../reducers/register-reducer";
+import { INITIAL_STATE } from "../reducers/register-reducer";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
   const [agreed, setAgreed] = useState(false);
+  const navigate = useNavigate();
+
+  const [state, dispatch] = useReducer(registerReducer, INITIAL_STATE);
+
+  function firstNameHandler(event: React.ChangeEvent<HTMLInputElement>) {
+    dispatch({ type: "FIRSTNAME", payload: event.target.value });
+  }
+
+  function lastNameHandler(event: React.ChangeEvent<HTMLInputElement>) {
+    dispatch({ type: "LASTNAME", payload: event.target.value });
+  }
+
+  function emailHandler(event: React.ChangeEvent<HTMLInputElement>) {
+    dispatch({ type: "EMAIL", payload: event.target.value });
+  }
+
+  function passwordHandler(event: React.ChangeEvent<HTMLInputElement>) {
+    dispatch({ type: "PASSWORD", payload: event.target.value });
+  }
+
+  function phoneNumberHandler(event: React.ChangeEvent<HTMLInputElement>) {
+    dispatch({ type: "PHONE_NUMBER", payload: event.target.value });
+  }
+
+  async function registerUser() {
+    try {
+      createUserWithEmailAndPassword(auth, state.email, state.password);
+      await navigate("/login");
+    } catch (err) {
+      console.error(err);
+    }
+  }
 
   return (
     <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
@@ -50,6 +87,7 @@ export default function Register() {
                 name="first-name"
                 id="first-name"
                 autoComplete="given-name"
+                onChange={firstNameHandler}
                 required
               />
             </div>
@@ -68,6 +106,7 @@ export default function Register() {
                 name="last-name"
                 id="last-name"
                 autoComplete="family-name"
+                onChange={lastNameHandler}
                 required
               />
             </div>
@@ -86,6 +125,7 @@ export default function Register() {
                 name="email"
                 id="email"
                 autoComplete="email"
+                onChange={emailHandler}
                 required
               />
             </div>
@@ -103,6 +143,7 @@ export default function Register() {
                 type="password"
                 name="password"
                 id="password"
+                onChange={passwordHandler}
                 required
               />
             </div>
@@ -139,6 +180,7 @@ export default function Register() {
                 name="phone-number"
                 id="phone-number"
                 autoComplete="tel"
+                onChange={phoneNumberHandler}
                 required
               />
             </div>
@@ -173,7 +215,7 @@ export default function Register() {
           </Switch.Group>
         </div>
         <div className="mt-10">
-          <Button form="register" type="submit">
+          <Button form="register" type="submit" onClick={registerUser}>
             Sign Up
           </Button>
         </div>
