@@ -36,13 +36,14 @@ export default function Register() {
     dispatch({ type: "PHONE_NUMBER", payload: event.target.value });
   }
 
-  async function registerUser() {
-    try {
-      createUserWithEmailAndPassword(auth, state.email, state.password);
-      await navigate("/login");
-    } catch (err) {
-      console.error(err);
-    }
+  function registerHandler() {
+    createUserWithEmailAndPassword(auth, state.email, state.password)
+      .then(() => {
+        navigate("/login");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   return (
@@ -67,11 +68,7 @@ export default function Register() {
           Create an account
         </p>
       </div>
-      <form
-        action="#"
-        method="POST"
-        className="mx-auto mt-10 max-w-xl sm:mt-20"
-      >
+      <form className="mx-auto mt-10 max-w-xl sm:mt-20">
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
             <label
@@ -86,7 +83,6 @@ export default function Register() {
                 type="text"
                 name="first-name"
                 id="first-name"
-                autoComplete="given-name"
                 onChange={firstNameHandler}
                 required
               />
@@ -105,7 +101,6 @@ export default function Register() {
                 type="text"
                 name="last-name"
                 id="last-name"
-                autoComplete="family-name"
                 onChange={lastNameHandler}
                 required
               />
@@ -124,7 +119,6 @@ export default function Register() {
                 type="email"
                 name="email"
                 id="email"
-                autoComplete="email"
                 onChange={emailHandler}
                 required
               />
@@ -179,7 +173,6 @@ export default function Register() {
                 type="tel"
                 name="phone-number"
                 id="phone-number"
-                autoComplete="tel"
                 onChange={phoneNumberHandler}
                 required
               />
@@ -215,7 +208,7 @@ export default function Register() {
           </Switch.Group>
         </div>
         <div className="mt-10">
-          <Button form="register" type="submit" onClick={registerUser}>
+          <Button form="register" type='button' onClick={registerHandler}>
             Sign Up
           </Button>
         </div>

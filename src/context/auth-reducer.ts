@@ -11,7 +11,7 @@ export type InitialContext = {
 export function AuthReducer(state: any, action: Action) {
   switch (action.type) {
     case "LOGIN":
-      return { ...state, currentUser: action.payload };
+      return {currentUser: action.payload};
     case "LOGOUT":
       return { currentUser: null };
     default:

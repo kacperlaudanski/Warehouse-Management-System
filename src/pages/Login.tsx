@@ -10,7 +10,7 @@ export default function Login() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const navigate = useNavigate();
-  const {dispatch} = useContext(AuthContext)
+  const { dispatch } = useContext(AuthContext);
 
   function emailHandler(event: React.ChangeEvent<HTMLInputElement>) {
     setEmail(event.target.value);
@@ -20,15 +20,17 @@ export default function Login() {
     setPassword(event.target.value);
   }
 
-  async function loginHandler() {
-    try {
-      signInWithEmailAndPassword(auth, email, password);
-      dispatch({type: "LOGIN", payload: email})
-      await navigate("/main");
-    } catch (err) {
-      console.error(err);
-    }
+  function loginHandler() {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((cred) => {
+        dispatch({ type: "LOGIN", payload: cred.user});
+        navigate("/main");
+      })
+      .catch((err) => {
+        console.log(false);
+      });
   }
+
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-36 lg:px-8">
@@ -103,7 +105,7 @@ export default function Login() {
               </div>
             </div>
             <div>
-              <Button type="submit" form="login" onClick={loginHandler}>
+              <Button form="login" type='button' onClick={loginHandler}>
                 Sign In
               </Button>
             </div>
