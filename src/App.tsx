@@ -8,7 +8,7 @@ import Main from "./pages/Main";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
-  const RequireAuth = (children: any) => {
+  const RequireAuth = ({children}: any) => {
     return currentUser ? children : <Navigate to={"/login"} />;
   };
   return (
@@ -21,9 +21,9 @@ function App() {
             <Route
               path="/main"
               element={
-                <RequireAuth>
+               <RequireAuth>
                   <Main />
-                </RequireAuth>
+               </RequireAuth>
               }
             />
           </Routes>
