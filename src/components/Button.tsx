@@ -7,7 +7,8 @@ const buttonStyles = cva(["rounded h-11 rounded-md transition-color duration-300
       ghost: ['bg-transparent hover:bg-neutral-300/30 '], 
     }, 
     sidebar: {
-      default: [],
+      extended: ['w-full h-10 flex items-center justify-between pl-3 pr-8 bg-neutral-400'],
+      rolled: [`w-16 h-16 flex flex-column justify-center text-sm items-center border-solid border-2 border-neutral-500`], 
     },
     action: {
       login: ['w-full bg-red-400 hover:bg-red-500 text-white focus-visible:outline-indigo-600 text-sm'],
