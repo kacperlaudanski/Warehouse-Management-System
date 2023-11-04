@@ -208,7 +208,7 @@ export default function Register() {
           </Switch.Group>
         </div>
         <div className="mt-10">
-          <Button form="register" type='button' onClick={registerHandler}>
+          <Button action="register" type='button' onClick={registerHandler}>
             Sign Up
           </Button>
         </div>
