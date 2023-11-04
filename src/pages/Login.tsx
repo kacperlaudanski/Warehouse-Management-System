@@ -23,11 +23,11 @@ export default function Login() {
   function loginHandler() {
     signInWithEmailAndPassword(auth, email, password)
       .then((cred) => {
-        dispatch({ type: "LOGIN", payload: cred.user});
-        navigate("/main");
+        dispatch({ type: "LOGIN", payload: cred.user})
+        navigate("/main")
       })
       .catch((err) => {
-        console.log(false);
+        console.log(false)
       });
   }
 
@@ -105,7 +105,7 @@ export default function Login() {
               </div>
             </div>
             <div>
-              <Button form="login" type='button' onClick={loginHandler}>
+              <Button action="login" type='button' onClick={loginHandler}>
                 Sign In
               </Button>
             </div>
