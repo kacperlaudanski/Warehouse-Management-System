@@ -5,10 +5,11 @@ const buttonStyles = cva(["rounded h-11 rounded-md transition-color duration-300
   variants: {
     variant:{
       ghost: ['bg-transparent hover:bg-neutral-300/30 '], 
+      active: ['bg-blue-400 text-white']
     }, 
     sidebar: {
-      extended: ['w-full h-10 flex items-center justify-between pl-3 pr-8 bg-neutral-400'],
-      rolled: [`w-16 h-16 flex flex-column justify-center text-sm items-center border-solid border-2 border-neutral-500`], 
+      extended: ['w-11/12 h-10 mx-4 flex items-center justify-between pl-3 pr-8 hover:bg-blue-400 hover:text-white mt-2'],
+      rolled: [`w-16 h-16 flex flex-column justify-center text-sm items-center hover:bg-blue-400 hover:text-white mt-2`], 
     },
     action: {
       login: ['w-full bg-red-400 hover:bg-red-500 text-white focus-visible:outline-indigo-600 text-sm'],
