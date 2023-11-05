@@ -5,6 +5,8 @@ import Register from "./pages/Register";
 import { AuthContextProvider, AuthContext } from "./context/auth-context";
 import { useContext } from "react";
 import Main from "./pages/Main";
+import Dashboard from "./pages/Dashboard";
+import Orders from "./pages/Orders";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -26,6 +28,8 @@ function App() {
                </RequireAuth>
               }
             />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/orders" element={<Orders />} />
           </Routes>
         </AuthContextProvider>
       </BrowserRouter>
