@@ -1,64 +1,15 @@
-import { useEffect, useState } from "react";
-import {
-  Gauge,
-  List,
-  Warehouse,
-  Undo2,
-  Truck,
-  PackageOpen,
-  LucideIcon,
-} from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 import Button from "../components/Button";
+import { sections } from "../data/sections-data";
 
 interface Sidebar {
   isSidebarShown: boolean;
 }
 export default function SidebarMenu({ isSidebarShown }: Sidebar) {
-  const [isDashboardActive, setDashboardActive] = useState(false);
-  const [isOrdersActive, setOrdersActive] = useState(false);
-  const [isWarehouseActive, setWarehouseActive] = useState(false);
-  const [isReturnsActive, setReturnsActive] = useState(false);
-  const [isDeliveryActive, setDeliveryActive] = useState(false);
-  const [isSuppliersActive, setSuppliersActive] = useState(false);
-  const sections = [
-    {
-      name: "Dashboard",
-      icon: Gauge,
-      state: isDashboardActive,
-      setState: setDashboardActive,
-    },
-    {
-      name: "Orders",
-      icon: List,
-      state: isOrdersActive,
-      setState: setOrdersActive,
-    },
-    {
-      name: "Warehouse",
-      icon: Warehouse,
-      state: isWarehouseActive,
-      setState: setWarehouseActive,
-    },
-    {
-      name: "Returns",
-      icon: Undo2,
-      state: isReturnsActive,
-      setState: setReturnsActive,
-    },
-    {
-      name: "Deliveries",
-      icon: PackageOpen,
-      state: isDeliveryActive,
-      setState: setDeliveryActive,
-    },
-    {
-      name: "Suppliers",
-      icon: Truck,
-      state: isSuppliersActive,
-      setState: setSuppliersActive,
-    },
-  ];
 
+
+  const [isDropdownVisible, setDropdownVisible] = useState(false); 
   return (
     <aside
       className={`${
@@ -69,14 +20,26 @@ export default function SidebarMenu({ isSidebarShown }: Sidebar) {
         return (
           <Button
             key={index}
-            variant={window.location.pathname === `/${section.name.toLowerCase()}` ? "active" : null}
+            variant={
+              window.location.pathname === `/${section.name.toLowerCase()}`
+                ? "active"
+                : null
+            }
             sidebar={isSidebarShown ? "extended" : "rolled"}
             onClick={() => {
-              window.location.pathname = section.name.toLowerCase();
+              {section.isButtonExpandable ? setDropdownVisible(prev => !prev) : window.location.pathname = section.name.toLowerCase()}
+              
             }}
           >
-            <section.icon />
-            {isSidebarShown && <h3>{section.name}</h3>}
+            <span className="flex justify-center items-center">
+              <section.icon className={isSidebarShown ? "mr-4" : ''} />
+              {isSidebarShown && <h3>{section.name}</h3>}
+            </span>
+            {isSidebarShown && section.isButtonExpandable ? (
+              <ChevronDown />
+            ) : (
+              ""
+            )}
           </Button>
         );
       })}
