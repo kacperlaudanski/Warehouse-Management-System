@@ -1,14 +1,15 @@
 import { ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { useContext } from "react";
 import Button from "../components/Button";
 import DropdownButton from "../components/DropdownButton";
+import { SidebarContext } from "../context/sidebar-context";
 import { sections } from "../data/sections-data";
 
 interface Sidebar {
   isSidebarShown: boolean;
 }
-export default function SidebarMenu({ isSidebarShown }: Sidebar) {
-  const [isDropdownVisible, setDropdownVisible] = useState(false);
+export default function SidebarMenu() {
+    const {isSidebarShown} = useContext(SidebarContext);
   return (
     <aside
       className={`${
