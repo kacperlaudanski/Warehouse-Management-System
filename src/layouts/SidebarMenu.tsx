@@ -5,16 +5,13 @@ import DropdownButton from "../components/DropdownButton";
 import { SidebarContext } from "../context/sidebar-context";
 import { sections } from "../data/sections-data";
 
-interface Sidebar {
-  isSidebarShown: boolean;
-}
 export default function SidebarMenu() {
-    const {isSidebarShown} = useContext(SidebarContext);
+  const {isSidebarShown} = useContext(SidebarContext);
   return (
     <aside
       className={`${
         isSidebarShown ? `w-56` : `w-24`
-      } transition-all duration-300 ease-in-out pt-24 px-2 flex items-center flex-col h-screen relative t-20 z-0 shadow-[7px_1px_9px_0px_#00000024]`}
+      } transition-all duration-300 ease-in-out pt-4 px-2 flex items-center flex-col h-full shadow-[7px_1px_9px_0px_#00000024]`}
     >
       {sections.map((section, index) => {
         return section.isButtonExpandable ? (

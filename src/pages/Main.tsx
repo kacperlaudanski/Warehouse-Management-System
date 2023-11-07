@@ -3,9 +3,11 @@ import SidebarMenu from "../layouts/SidebarMenu";
 
 export default function Main() {
   return (
-    <div className="w-full flex flex-col">
+    <div className="w-full h-screen flex flex-col">
       <Header />
-      <SidebarMenu />
+      <div className="w-full h-full flex">
+        <SidebarMenu />
+      </div> 
     </div>
   );
 }
