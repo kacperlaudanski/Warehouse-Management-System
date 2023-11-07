@@ -17,7 +17,10 @@ export default function SidebarMenu({ isSidebarShown }: Sidebar) {
     >
       {sections.map((section, index) => {
         return section.isButtonExpandable ? (
-          <DropdownButton isSidebarShown={isSidebarShown}>
+          <DropdownButton
+            isSidebarShown={isSidebarShown}
+            menuItems={section.expandedOptions}
+          >
             <span className="flex justify-center items-center">
               <section.icon className={isSidebarShown ? "mr-4" : ""} />
               {isSidebarShown && <h3>{section.name}</h3>}
@@ -34,11 +37,7 @@ export default function SidebarMenu({ isSidebarShown }: Sidebar) {
             }
             sidebar={isSidebarShown ? "extended" : "rolled"}
             onClick={() => {
-              {
-                section.isButtonExpandable
-                  ? setDropdownVisible((prev) => !prev)
-                  : (window.location.pathname = section.name.toLowerCase());
-              }
+              window.location.pathname = section.name.toLowerCase();
             }}
           >
             <span className="flex justify-center items-center">
