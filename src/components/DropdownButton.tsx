@@ -1,4 +1,3 @@
-import { ScanEye } from "lucide-react";
 import { ReactNode, useState } from "react";
 import Button from "./Button";
 
@@ -14,6 +13,7 @@ export default function DropdownButton({
   menuItems,
 }: DropdownButton) {
   const [isDropdownShown, setDropdown] = useState(false);
+  console.log(`..${window.location.pathname}`)
   return (
     <>
       <Button
@@ -23,11 +23,25 @@ export default function DropdownButton({
         {children}
       </Button>
       {isDropdownShown && (
-        <ul className={`w-2/3 h-auto flex flex-col border-l-2 border-solid mt-2 mb-2 ${!isSidebarShown && 'hidden'}`}>
-          {menuItems?.map((item) => { 
+        <ul
+          className={`w-2/3 h-auto flex flex-col border-l-2 border-solid mt-2 mb-2 ${
+            !isSidebarShown && "hidden"
+          }`}
+        >
+          {menuItems?.map((item) => {
             return (
               <li className="ml-2">
-                <Button sidebar='extended' onClick={() => window.location.pathname = item.link}>{item.name}</Button>
+                <Button
+                  sidebar="extended"
+                  variant={
+                    `..${window.location.pathname}` === item.link
+                      ? "active"
+                      : null
+                  }
+                  onClick={() => (window.location.pathname = item.link)}
+                >
+                  {item.name}
+                </Button>
               </li>
             );
           })}

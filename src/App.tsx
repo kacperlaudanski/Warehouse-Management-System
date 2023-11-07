@@ -6,8 +6,15 @@ import { AuthContextProvider, AuthContext } from "./context/auth-context";
 import { useContext } from "react";
 import Main from "./pages/Main";
 import Dashboard from "./pages/Dashboard";
-import Orders from "./pages/Orders";
-import {SidebarContextProvider} from "./context/sidebar-context";
+import OrdersPreview from "./pages/OrdersPreview";
+import { SidebarContextProvider } from "./context/sidebar-context";
+import Suppliers from "./pages/Suppliers";
+import Returns from "./pages/Returns";
+import Deliveries from "./pages/Deliveries";
+import OrdersHistory from "./pages/OrdersHistory";
+import WarehousePreview from "./pages/WarehousePreview";
+import WarehouseStockLevel from "./pages/WarehouseStockLevel";
+import WarehousePendingArea from "./pages/WarehousePendingArea";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -30,8 +37,78 @@ function App() {
                   </RequireAuth>
                 }
               />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/orders" element={<Orders />} />
+              <Route
+                path="/dashboard"
+                element={
+                  <RequireAuth>
+                    <Dashboard />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="/orders/preview"
+                element={
+                  <RequireAuth>
+                    <OrdersPreview />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="/orders/history"
+                element={
+                  <RequireAuth>
+                    <OrdersHistory />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="/warehouse/preview"
+                element={
+                  <RequireAuth>
+                    <WarehousePreview />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="/warehouse/stock-level"
+                element={
+                  <RequireAuth>
+                    <WarehouseStockLevel />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="/warehouse/pending-area"
+                element={
+                  <RequireAuth>
+                    <WarehousePendingArea />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="/returns"
+                element={
+                  <RequireAuth>
+                    <Returns />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="/deliveries"
+                element={
+                  <RequireAuth>
+                    <Deliveries />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="/suppliers"
+                element={
+                  <RequireAuth>
+                    <Suppliers />
+                  </RequireAuth>
+                }
+              />
             </Routes>
           </SidebarContextProvider>
         </AuthContextProvider>
