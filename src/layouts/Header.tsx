@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <header className="w-screen h-24 bg-blue-400 px-8 sticky flex items-center justify-between">
       <div className="w-24 flex items-center justify-between">
-      <Button icon='iconButton' variant='ghost' onClick={() => setSidebarVisibility(prev => !prev)}>
+      <Button icon='iconButton' screen='mobile' variant='ghost' onClick={() => setSidebarVisibility(prev => !prev)}>
         <Menu/>
       </Button>
       <h1>LOGO</h1>
