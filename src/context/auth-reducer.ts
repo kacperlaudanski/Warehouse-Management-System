@@ -1,6 +1,6 @@
-interface Action {
-  type: string;
-  payload: Event;
+interface Action<T, P> {
+  type: T;
+  payload: P;
 }
 
 export type InitialContext = {
@@ -8,7 +8,7 @@ export type InitialContext = {
   dispatch: React.Dispatch<any>;
 };
 
-export function AuthReducer(state: any, action: Action) {
+export function AuthReducer(state: any, action: Action<string, Event>) {
   switch (action.type) {
     case "LOGIN":
       return {currentUser: action.payload};
