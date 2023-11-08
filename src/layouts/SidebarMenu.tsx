@@ -6,12 +6,14 @@ import { SidebarContext } from "../context/sidebar-context";
 import { sections } from "../data/sections-data";
 
 export default function SidebarMenu() {
-  const {isSidebarShown} = useContext(SidebarContext);
+  const {isSidebarShown, setSidebarVisibility} = useContext(SidebarContext);
   return (
     <aside
       className={`${
         isSidebarShown ? `w-56` : `w-24`
       } transition-all duration-300 ease-in-out pt-4 px-2 flex items-center flex-col h-full shadow-[7px_1px_9px_0px_#00000024]`}
+      onMouseEnter={() => setSidebarVisibility(true)}
+      onMouseLeave={() => setSidebarVisibility(false)}
     >
       {sections.map((section, index) => {
         return section.isButtonExpandable ? (
