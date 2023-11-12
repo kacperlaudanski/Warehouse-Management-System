@@ -15,6 +15,7 @@ import OrdersHistory from "./pages/OrdersHistory";
 import WarehousePreview from "./pages/WarehousePreview";
 import WarehouseStockLevel from "./pages/WarehouseStockLevel";
 import WarehousePendingArea from "./pages/WarehousePendingArea";
+import {NextUIProvider} from "@nextui-org/react";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -23,7 +24,8 @@ function App() {
   };
   return (
     <>
-      <BrowserRouter>
+    <NextUIProvider>
+    <BrowserRouter>
         <AuthContextProvider>
           <SidebarContextProvider>
             <Routes>
@@ -113,6 +115,8 @@ function App() {
           </SidebarContextProvider>
         </AuthContextProvider>
       </BrowserRouter>
+    </NextUIProvider>
+
     </>
   );
 }
