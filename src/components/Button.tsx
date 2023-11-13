@@ -20,7 +20,8 @@ const buttonStyles = cva(["rounded h-11 rounded-md transition-color duration-300
       relocate: ['w-full h-2/5 bg-gradient-to-r from-indigo-700 to-blue-500 hover:bg-blue-400 text-white'],
     },
     icon: {
-      iconButton: ['w-11 h-11 text-white flex items-center justify-center']
+      iconButton: ['w-11 h-11 text-white flex items-center justify-center'],
+      dashboardIcon: ['w-11 h-11 text-neutral-900 flex items-center justify-center']
     },
     screen: {
       mobile: ['lg:hidden md:hidden'], 
