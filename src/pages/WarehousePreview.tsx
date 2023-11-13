@@ -5,6 +5,7 @@ import Button from "../components/Button";
 import { CircularProgress } from "@nextui-org/react";
 
 export default function WarehousePreview() {
+
   return (
     <Main>
       <div className="w-full h-full flex">
