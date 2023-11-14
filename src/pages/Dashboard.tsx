@@ -2,9 +2,9 @@ import Main from "./Main";
 import { ArrowRight, List, Truck, Undo2 } from "lucide-react";
 import Button from "../components/Button";
 import { CircularProgress } from "@nextui-org/react";
-import Chart from 'chart.js/auto'
+import Chart from "chart.js/auto";
 import { CategoryScale } from "chart.js";
-import PieChart from '../components/PieChart'
+import PieChart from "../components/PieChart";
 import { pieChartData } from "../data/pie-chart-data";
 import { useState } from "react";
 
@@ -12,20 +12,22 @@ Chart.register(CategoryScale);
 
 export default function Dashboard() {
   const [chartData, setChartData] = useState({
-    labels: pieChartData.map((data) => data.category), 
+    labels: pieChartData.map((data) => data.category),
     datasets: [
       {
         data: pieChartData.map((data) => data.userGain),
         backgroundColor: [
-          "rgba(75,192,192,1)",
-          "&quot;#ecf0f1",
-          "#50AF95",
-          "#f3ba2f",
-          "#2a71d0"
+          "#abb2fc",
+          "#abdafc",
+          "#d0f0c0",
+          "#effeee",
+          "#367588",
         ],
-      }
-    ]
-  })
+        borderColor: "white",
+        borderWidth: 1,
+      },
+    ],
+  });
   return (
     <Main>
       <div className="w-full h-full bg-neutral-100 rounded-tl-3xl rounded-bl-3xl p-8 overflow-hidden">
@@ -90,9 +92,14 @@ export default function Dashboard() {
                 </div>
               </div>
             </div>
-            <div className="w-full h-full flex items-center justify-around rounded-2xl bg-blue-400 mt-2 p-4">
-               <h2 className="text-2xl text-white tracking-wider">Warehouse Space Allocation by Category</h2>
-               <PieChart chartData={chartData} />
+            <div className="w-full h-full flex items-center justify-around rounded-2xl bg-neutral-700 mt-2 p-8">
+              <div className="h-full flex flex-col justify-around items-center">
+                <h2 className="text-2xl text-neutral-200 tracking-wider">
+                  Warehouse Space Allocation by Category
+                </h2>
+                <Button variant='stockLevel'>Stock Level</Button>
+              </div>
+              <PieChart chartData={chartData} />
             </div>
           </div>
           <div className="w-2/6 h-4/5 flex flex-col justify-between items-center">
