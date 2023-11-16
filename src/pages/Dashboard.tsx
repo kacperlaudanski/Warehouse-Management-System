@@ -44,14 +44,14 @@ export default function Dashboard() {
 
   return (
     <Main>
-      <div className="w-full h-full bg-neutral-100 rounded-tl-3xl rounded-bl-3xl p-8 overflow-hidden">
+      <div className="w-full h-full bg-white rounded-tl-3xl rounded-bl-3xl p-8 overflow-hidden">
         <div className="w-full h-14 border-b-2 border-solid border-neutral-300">
           <h1 className="text-2xl tracking-wider">Dashboard</h1>
         </div>
         <div className="w-full h-full flex justify-around items-center">
           <div className="w-3/5 h-4/5 flex flex-col justify-between items-center">
-            <div className="w-full h-2/4 grid grid-rows-1 grid-cols-3 grid-flow-col gap-2 mb-2">
-              <div className="h-full flex bg-white rounded-2xl p-4">
+            <div className="w-full h-1/3 grid grid-rows-1 grid-cols-3 grid-flow-col gap-2 mb-2">
+              <div className="h-full flex bg-neutral-100 rounded-2xl p-4">
                 <div className="w-4/5 h-full flex flex-col justify-between">
                   <div className="w-12 h-12 rounded-full bg-emerald-200 flex items-center opacity-70 justify-center text-2xl mb-4">
                     <List className="text-green-900" />
@@ -69,7 +69,7 @@ export default function Dashboard() {
                   </Button>
                 </div>
               </div>
-              <div className="h-full flex bg-white rounded-2xl p-4">
+              <div className="h-full flex bg-neutral-100 rounded-2xl p-4">
                 <div className="w-4/5 h-full flex flex-col justify-between">
                   <div className="w-12 h-12 rounded-full bg-red-200 flex items-center opacity-70 justify-center text-2xl mb-4">
                     <Undo2 className="text-red-900" />
@@ -87,7 +87,7 @@ export default function Dashboard() {
                   </Button>
                 </div>
               </div>
-              <div className="h-full flex bg-white rounded-2xl p-4">
+              <div className="h-full flex bg-neutral-100 rounded-2xl p-4">
                 <div className="w-4/5 h-full flex flex-col justify-between">
                   <div className="w-12 h-12 rounded-full bg-blue-200 flex items-center opacity-70 justify-center text-2xl mb-4">
                     <Truck className="text-blue-900" />
@@ -106,9 +106,9 @@ export default function Dashboard() {
                 </div>
               </div>
             </div>
-            <div className="w-full h-full flex items-center justify-around rounded-2xl bg-neutral-700 mt-2 p-8">
-              <div className="h-full flex flex-col justify-around items-center">
-                <h2 className="text-2xl text-neutral-200 tracking-wider">
+            <div className="w-full h-2/3 flex items-center rounded-2xl bg-neutral-100 mt-2 p-8">
+              <div className="h-full flex flex-col justify-around items-start">
+                <h2 className="text-2xl tracking-wider">
                   Warehouse Space Allocation by Category
                 </h2>
                 <Button variant='stockLevel'>Stock Level</Button>
@@ -117,11 +117,11 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="w-2/6 h-4/5 flex flex-col justify-between items-center">
-            <div className="w-full h-2/6 mb-2 bg-white rounded-2xl flex flex-col items-end justify-center text-right p-2">
+            <div className="w-full h-1/3 mb-2 bg-white rounded-2xl flex flex-col items-end justify-center text-right p-2">
               <div className="w-full h-1/5 text-lg m-2 text-neutral-400">{currentDate()}</div>
               <div className="w-full h-1/5 text-6xl m-2">{currentTime()}</div>
             </div>
-            <div className="w-full h-4/6 mt-2 bg-blue-200 rounded-2xl bg-gradient-to-r from-blue-400 to-rose-300 flex flex-col items-center justify-around p-4">
+            <div className="w-full h-2/3 mt-2 bg-blue-200 rounded-2xl bg-gradient-to-r from-blue-400 to-rose-300 flex flex-col items-center justify-around p-4">
               <h2 className="text-2xl tracking-wider text-white">
                 Warehouse Fill
               </h2>

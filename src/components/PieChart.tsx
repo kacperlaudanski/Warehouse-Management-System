@@ -5,7 +5,7 @@ interface ChartData {
 
 export default function PieChart({ chartData }: ChartData) {
   return (
-    <div className="w-4/5 h-4/5 flex justify-around">
+    <div className="flex justify-around">
       <Pie
         data={chartData}
         options={{
@@ -18,6 +18,7 @@ export default function PieChart({ chartData }: ChartData) {
               boxHeight: 15, 
               titleMarginBottom: 12,
               padding: 20,
+              borderColor: '#000',
               callbacks: {
                 label: (context) => {
                   const label = context.label || "";

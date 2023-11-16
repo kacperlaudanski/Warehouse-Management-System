@@ -8,7 +8,7 @@ const buttonStyles = cva(["rounded h-11 rounded-md transition-color duration-300
       active: ['bg-blue-400 text-white'], 
       returnArea: ['bg-gradient-to-r from-blue-600 to-green-300'], 
       pendingArea: ['bg-gradient-to-r from-pink-300 to-blue-500'], 
-      stockLevel: ['w-full h-16 text-white bg-blue-400 hover:bg-blue-500'], 
+      stockLevel: ['w-3/5 h-14 text-white bg-blue-400 hover:bg-blue-500'], 
     }, 
     sidebar: {
       extended: ['w-full h-10 mx-4 flex items-center justify-between pl-3 pr-3 hover:bg-blue-400 hover:text-white mt-2'],
