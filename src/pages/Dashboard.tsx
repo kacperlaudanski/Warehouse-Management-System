@@ -1,4 +1,5 @@
 import Main from "./Main";
+import Clock from "../components/Clock";
 import { ArrowRight, List, Truck, Undo2 } from "lucide-react";
 import Button from "../components/Button";
 import { CircularProgress } from "@nextui-org/react";
@@ -29,18 +30,7 @@ export default function Dashboard() {
     ],
   });
 
-  const [date, setDate] = useState(new Date()); 
-  setInterval(() => {
-    setDate(new Date())
-  }, 1000); 
-  
-  function currentDate(){
-    return date.toLocaleDateString('en-US', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}); 
-  }
 
-  function currentTime(){
-    return date.toLocaleTimeString('en-US')
-  }
 
   return (
     <Main>
@@ -117,10 +107,7 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="w-2/6 h-4/5 flex flex-col justify-between items-center">
-            <div className="w-full h-1/3 mb-2 bg-white rounded-2xl flex flex-col items-end justify-center text-right p-2">
-              <div className="w-full h-1/5 text-lg m-2 text-neutral-400">{currentDate()}</div>
-              <div className="w-full h-1/5 text-6xl m-2">{currentTime()}</div>
-            </div>
+            <Clock /> 
             <div className="w-full h-2/3 mt-2 bg-blue-200 rounded-2xl bg-gradient-to-r from-blue-400 to-rose-300 flex flex-col items-center justify-around p-4">
               <h2 className="text-2xl tracking-wider text-white">
                 Warehouse Fill
