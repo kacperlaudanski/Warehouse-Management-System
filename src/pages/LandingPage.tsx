@@ -1,5 +1,7 @@
+import Header from "../layouts/Header"
+
 export default function LandingPage(){
     return (
-        <h1>Hello</h1>
+        <Header />
     )
 }
