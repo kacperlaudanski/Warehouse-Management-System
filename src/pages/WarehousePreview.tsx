@@ -2,10 +2,9 @@ import Main from "./Main";
 import Stillage from "../layouts/Warehouse/Stillage";
 import SectionsList from "../layouts/Warehouse/SectionsList";
 import Button from "../components/Button";
-import { CircularProgress } from "@nextui-org/react";
+import SectionUsage from "../components/Warehouse/SectionUsage";
 
 export default function WarehousePreview() {
-
   return (
     <Main>
       <div className="w-full h-full flex">
@@ -37,19 +36,7 @@ export default function WarehousePreview() {
             <h3 className="text-lg tracking-wider text-white m-0">
               Section X usage
             </h3>
-            <div className="flex flex-col justify-center items-center w-full h-full relative z-50">
-              <CircularProgress
-                classNames={{ svg: "w-32 h-32", value: 'text-2xl text-white'}}
-                value={40}
-                color="success"
-                showValueLabel={true}
-              />
-                          <div className="w-4/5 flex justify-between">
-                <div className="flex flex-col text-sm text-center"><span className="text-white text-opacity-50">Loaded</span><span className="text-neutral-200">19 Shelves</span></div>
-                <div className="flex flex-col text-sm text-center"><span className="text-white text-opacity-50">Empty</span><span className="text-neutral-200">65 Shelves</span></div>
-            </div>
-            </div>
-
+            <SectionUsage />
           </div>
           <div className="w-full h-3/5 flex flex-col justify-around rounded-xl box-border p-4 pt-10 ">
             <Button action="relocate" variant="pendingArea">
