@@ -4,29 +4,23 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Menu, BellRing} from "lucide-react";
 import { SidebarContext } from "../context/sidebar-context";
-
-interface Header {
-    sidebarHandler: () => void; 
-}
+import Logo from '../images/logo-trans.png'
 
 export default function Header() {
   const { dispatch } = useContext(AuthContext);
   const {setSidebarVisibility} = useContext(SidebarContext)
   const navigate = useNavigate();
 
-  function notificationsModalHandler(){
-    return null; 
-  }
   return (
     <header className="w-screen h-24 bg-blue-400 px-8 sticky flex items-center justify-between">
       <div className="w-24 flex items-center justify-between">
       <Button icon='iconButton' screen='mobile' variant='ghost' onClick={() => setSidebarVisibility(prev => !prev)}>
         <Menu/>
       </Button>
-      <h1>LOGO</h1>
+      <img src={Logo} alt='logo' />
       </div>
       <div className="w-40 flex items-center justify-between">
-      <Button icon='iconButton' variant='ghost' onClick={notificationsModalHandler}>
+      <Button icon='iconButton' variant='ghost' onClick={() => null}>
         <BellRing />
       </Button>
       <Button
