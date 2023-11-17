@@ -1,14 +1,34 @@
 import { Progress, Badge } from "flowbite-react";
 
-export default function SectionListElement() {
+interface Section {
+  name: string;
+  isOccupied: boolean;
+  fillPercentage: number;
+}
+export default function SectionListElement({
+  name,
+  isOccupied,
+  fillPercentage,
+}: Section) {
   return (
     <li className="w-full h-1/5 flex justify-between items-center bg-sky-100 py-2 px-4 rounded-lg">
-      <h3>Section 001</h3>
-      <Badge color='failure'>Used</Badge>
+      <h3>{name}</h3>
+      <Badge color={isOccupied ? "failure" : "success"}>
+        {isOccupied ? "Used" : "Empty"}
+      </Badge>
       <div className="w-1/4">
-        <Progress progress={34} />
+        <Progress
+          progress={fillPercentage}
+          color={
+            fillPercentage < 30
+              ? "green"
+              : fillPercentage >= 30 && fillPercentage < 90
+              ? "yellow"
+              : "red"
+          }
+        />
       </div>
-      <div>20%</div>
+      <div>{fillPercentage} %</div>
     </li>
   );
 }
