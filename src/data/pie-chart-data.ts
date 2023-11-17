@@ -14,7 +14,7 @@ export const pieChartData = [
     {
       id: 3,
       category: 'Bathroom',
-      userGain: 20,
+      userGain: 10,
       userLost: 555
     },
     {
@@ -26,7 +26,7 @@ export const pieChartData = [
     {
       id: 5,
       category: 'Living Room',
-      userGain: 25,
+      userGain: 35,
       userLost: 234
     }
   ];
