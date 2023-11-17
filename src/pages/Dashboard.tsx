@@ -1,38 +1,11 @@
 import Main from "./Main";
 import Clock from "../components/Clock";
-import { ArrowRight, List, Truck, Undo2 } from "lucide-react";
 import Button from "../components/Button";
 import { CircularProgress } from "@nextui-org/react";
-import Chart from "chart.js/auto";
-import { CategoryScale } from "chart.js";
 import PieChart from "../components/PieChart";
-import { pieChartData } from "../data/pie-chart-data";
-import { useState } from "react";
-import Overview from "../components/Dashboard/Overview";
-
-Chart.register(CategoryScale);
+import Overview from "../components/Dashboard/Overview"
 
 export default function Dashboard() {
-  const [chartData, setChartData] = useState({
-    labels: pieChartData.map((data) => data.category),
-    datasets: [
-      {
-        data: pieChartData.map((data) => data.userGain),
-        backgroundColor: [
-          "#abb2fc",
-          "#abdafc",
-          "#d0f0c0",
-          "#effeee",
-          "#367588",
-        ],
-        borderColor: "white",
-        borderWidth: 1,
-      },
-    ],
-  });
-
-
-
   return (
     <Main>
       <div className="w-full h-full bg-white rounded-tl-3xl rounded-bl-3xl p-8 overflow-hidden">
@@ -49,7 +22,7 @@ export default function Dashboard() {
                 </h2>
                 <Button variant='stockLevel'>Stock Level</Button>
               </div>
-              <PieChart chartData={chartData} />
+              <PieChart />
             </div>
           </div>
           <div className="w-2/6 h-4/5 flex flex-col justify-between items-center">

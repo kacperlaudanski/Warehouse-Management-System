@@ -10,6 +10,7 @@ export default function Overview() {
       {dashboardOverviewData.map((item, index) => {
         return (
             <OverviewItem 
+              key={index}
               overviewLabel={item.label}
               overviewInfo={item.info}
               redirect={() => navigate(item.link)}

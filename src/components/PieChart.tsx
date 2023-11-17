@@ -1,9 +1,29 @@
 import { Pie } from "react-chartjs-2";
-interface ChartData {
-  chartData: any;
-}
+import { pieChartData } from "../data/pie-chart-data";
+import { useState } from "react";
+import Chart from "chart.js/auto";
+import { CategoryScale } from "chart.js";
 
-export default function PieChart({ chartData }: ChartData) {
+Chart.register(CategoryScale);
+
+export default function PieChart() {
+  const [chartData, setChartData] = useState({
+    labels: pieChartData.map((data) => data.category),
+    datasets: [
+      {
+        data: pieChartData.map((data) => data.userGain),
+        backgroundColor: [
+          "#abb2fc",
+          "#abdafc",
+          "#d0f0c0",
+          "#effeee",
+          "#367588",
+        ],
+        borderColor: "white",
+        borderWidth: 1,
+      },
+    ],
+  });
   return (
     <div className="flex justify-around">
       <Pie
