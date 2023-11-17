@@ -16,6 +16,7 @@ import WarehousePreview from "./pages/WarehousePreview";
 import WarehouseStockLevel from "./pages/WarehouseStockLevel";
 import WarehousePendingArea from "./pages/WarehousePendingArea";
 import {NextUIProvider} from "@nextui-org/react";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -29,6 +30,7 @@ function App() {
         <AuthContextProvider>
           <SidebarContextProvider>
             <Routes>
+              <Route index element={<LandingPage />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route

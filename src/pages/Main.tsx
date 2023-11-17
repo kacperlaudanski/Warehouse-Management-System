@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import Header from "../layouts/Header";
 import SidebarMenu from "../layouts/SidebarMenu";
 
