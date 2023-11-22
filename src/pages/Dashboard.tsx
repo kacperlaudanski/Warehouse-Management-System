@@ -8,7 +8,7 @@ import Overview from "../components/Dashboard/Overview"
 export default function Dashboard() {
   return (
     <Main>
-      <div className="w-full h-full bg-white rounded-tl-3xl rounded-bl-3xl p-8 overflow-hidden">
+      <div className="w-full h-screen bg-white rounded-tl-3xl rounded-bl-3xl p-8 overflow-hidden">
         <div className="w-full h-14 border-b-2 border-solid border-neutral-300">
           <h1 className="text-2xl tracking-wider">Dashboard</h1>
         </div>
