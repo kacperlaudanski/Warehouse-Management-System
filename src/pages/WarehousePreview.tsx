@@ -7,7 +7,7 @@ import SectionUsage from "../components/Warehouse/SectionUsage";
 export default function WarehousePreview() {
   return (
     <Main>
-      <div className="w-full h-full flex">
+      <div className="w-full h-screen flex">
         <div className="w-9/12 h-full flex flex-col bg-white rounded-3xl p-8 pb-16 shadow-[7px_0px_7px_0px_#00000024] z-20">
           <h1 className="text-2xl tracking-wider">Warehouse | Preview</h1>
           <div className="w-full h-2/4 pt-4">

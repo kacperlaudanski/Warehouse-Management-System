@@ -7,7 +7,7 @@ export default function Main({ children }: any) {
       <Header />
       <div className="w-full flex bg-neutral-100 pt-24">
         <SidebarMenu />
-        <div className="w-full h-screen flex flex-col rounded-tl-3xl rounded-bl-3xl pl-28">{children}</div>
+        <div className="w-full h-auto flex flex-col rounded-tl-3xl rounded-bl-3xl pl-28">{children}</div>
       </div>
     </div>
   );
