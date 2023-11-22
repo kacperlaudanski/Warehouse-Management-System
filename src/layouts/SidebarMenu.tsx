@@ -11,7 +11,7 @@ export default function SidebarMenu() {
     <aside
       className={`${
         isSidebarShown ? `w-56` : `w-24`
-      } transition-all duration-300 ease-in-out pt-4 px-2 flex items-center flex-col h-full bg-neutral-100`}
+      } transition-all duration-300 ease-in-out pt-10 px-2 flex items-center flex-col h-screen bg-neutral-100 fixed z-30`}
       onMouseEnter={() => setSidebarVisibility(true)}
       onMouseLeave={() => setSidebarVisibility(false)}
     >

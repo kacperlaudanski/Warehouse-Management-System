@@ -13,7 +13,7 @@ export default function Header() {
   const navigate = useNavigate();
 
   return (
-    <header className="w-screen h-24 bg-blue-400 px-8 sticky flex items-center justify-between">
+    <header className="w-screen h-24 bg-blue-400 px-8 flex items-center fixed justify-between z-50">
       <div className="w-24 flex items-center justify-between">
         <Button
           icon="iconButton"
@@ -34,7 +34,7 @@ export default function Header() {
             action="logout"
             onClick={() => {
               dispatch({ type: "LOGOUT" });
-              navigate("/login");
+              navigate("/");
             }}
           >
             Logout
