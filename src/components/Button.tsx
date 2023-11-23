@@ -26,7 +26,8 @@ const buttonStyles = cva(["rounded h-11 rounded-md transition-color duration-300
     },
     icon: {
       iconButton: ['w-11 h-11 text-white flex items-center justify-center'],
-      dashboardIcon: ['w-11 h-11 text-neutral-900 flex items-center justify-center']
+      dashboardIcon: ['w-11 h-11 text-neutral-900 flex items-center justify-center'], 
+      actionButton: ['w-11 h-11 text-black flex items-center justify-center']
     },
     screen: {
       mobile: ['lg:hidden md:hidden'], 
