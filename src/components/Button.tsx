@@ -9,7 +9,7 @@ const buttonStyles = cva(["rounded h-11 rounded-md transition-color duration-300
       returnArea: ['bg-gradient-to-r from-blue-600 to-green-300'], 
       pendingArea: ['bg-gradient-to-r from-pink-300 to-blue-500'], 
       stockLevel: ['w-3/5 h-14 text-white bg-blue-400 hover:bg-blue-500'], 
-      navbarLogin:['w-32 h-10 rounded-xl text-white bg-neutral-300 bg-opacity-30 border-solid border-2 border-white hover:bg-neutral-800']
+      navbarLogin:['w-32 h-10 rounded-xl text-white bg-neutral-300 bg-opacity-30 border-solid border-2 border-white hover:bg-neutral-800'], 
     }, 
     orders:{
       complete: ['w-full h-12 bg-blue-400 hover:bg-blue-500 text-white text-sm rounded-lg']
@@ -23,6 +23,7 @@ const buttonStyles = cva(["rounded h-11 rounded-md transition-color duration-300
       register: ['w-full bg-indigo-600 hover:bg-indigo-900 text-white focus-visible:outline-indigo-600 text-sm'],
       logout: ['w-24 bg-neutral-300 text-slate-500 hover:bg-neutral-800'], 
       relocate: ['w-full h-2/5 bg-gradient-to-r from-indigo-700 to-blue-500 hover:bg-blue-400 text-white'],
+      add:['w-36 h-11 text-white bg-blue-400 hover:bg-blue-500 text-white text-sm rounded-lg'], 
     },
     icon: {
       iconButton: ['w-11 h-11 text-white flex items-center justify-center'],

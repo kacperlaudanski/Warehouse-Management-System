@@ -13,10 +13,11 @@ import Returns from "./pages/Returns";
 import Deliveries from "./pages/Deliveries";
 import OrdersHistory from "./pages/OrdersHistory";
 import WarehousePreview from "./pages/WarehousePreview";
-import WarehouseStockLevel from "./pages/WarehouseStockLevel";
+import WarehouseCategories from "./pages/WarehouseCategories";
 import WarehousePendingArea from "./pages/WarehousePendingArea";
-import {NextUIProvider} from "@nextui-org/react";
+import { NextUIProvider } from "@nextui-org/react";
 import LandingPage from "./pages/LandingPage";
+import WarehouseStockLevel from "./pages/WarehouseStockLevel";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -25,100 +26,107 @@ function App() {
   };
   return (
     <>
-    <NextUIProvider>
-    <BrowserRouter>
-        <AuthContextProvider>
-          <SidebarContextProvider>
-            <Routes>
-              <Route index element={<LandingPage />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route
-                path="/main"
-                element={
-                  <RequireAuth>
-                    <Main />
-                  </RequireAuth>
-                }
-              />
-              <Route
-                path="/dashboard"
-                element={
-                  <RequireAuth>
-                    <Dashboard />
-                  </RequireAuth>
-                }
-              />
-              <Route
-                path="/orders/preview"
-                element={
-                  <RequireAuth>
-                    <OrdersPreview />
-                  </RequireAuth>
-                }
-              />
-              <Route
-                path="/orders/history"
-                element={
-                  <RequireAuth>
-                    <OrdersHistory />
-                  </RequireAuth>
-                }
-              />
-              <Route
-                path="/warehouse/preview"
-                element={
-                  <RequireAuth>
-                    <WarehousePreview />
-                  </RequireAuth>
-                }
-              />
-              <Route
-                path="/warehouse/stock-level"
-                element={
-                  <RequireAuth>
-                    <WarehouseStockLevel />
-                  </RequireAuth>
-                }
-              />
-              <Route
-                path="/warehouse/pending-area"
-                element={
-                  <RequireAuth>
-                    <WarehousePendingArea />
-                  </RequireAuth>
-                }
-              />
-              <Route
-                path="/returns"
-                element={
-                  <RequireAuth>
-                    <Returns />
-                  </RequireAuth>
-                }
-              />
-              <Route
-                path="/deliveries"
-                element={
-                  <RequireAuth>
-                    <Deliveries />
-                  </RequireAuth>
-                }
-              />
-              <Route
-                path="/suppliers"
-                element={
-                  <RequireAuth>
-                    <Suppliers />
-                  </RequireAuth>
-                }
-              />
-            </Routes>
-          </SidebarContextProvider>
-        </AuthContextProvider>
-      </BrowserRouter>
-    </NextUIProvider>
-
+      <NextUIProvider>
+        <BrowserRouter>
+          <AuthContextProvider>
+            <SidebarContextProvider>
+              <Routes>
+                <Route index element={<LandingPage />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route
+                  path="/main"
+                  element={
+                    <RequireAuth>
+                      <Main />
+                    </RequireAuth>
+                  }
+                />
+                <Route
+                  path="/dashboard"
+                  element={
+                    <RequireAuth>
+                      <Dashboard />
+                    </RequireAuth>
+                  }
+                />
+                <Route
+                  path="/orders/preview"
+                  element={
+                    <RequireAuth>
+                      <OrdersPreview />
+                    </RequireAuth>
+                  }
+                />
+                <Route
+                  path="/orders/history"
+                  element={
+                    <RequireAuth>
+                      <OrdersHistory />
+                    </RequireAuth>
+                  }
+                />
+                <Route
+                  path="/warehouse/preview"
+                  element={
+                    <RequireAuth>
+                      <WarehousePreview />
+                    </RequireAuth>
+                  }
+                />
+                <Route
+                  path="/warehouse/stock-level"
+                  element={
+                    <RequireAuth>
+                      <WarehouseCategories />
+                    </RequireAuth>
+                  }
+                />
+                <Route
+                  path="/warehouse/stock-level/category"
+                  element={
+                    <RequireAuth>
+                      <WarehouseStockLevel />
+                    </RequireAuth>
+                  }
+                />
+                <Route
+                  path="/warehouse/pending-area"
+                  element={
+                    <RequireAuth>
+                      <WarehousePendingArea />
+                    </RequireAuth>
+                  }
+                />
+                <Route
+                  path="/returns"
+                  element={
+                    <RequireAuth>
+                      <Returns />
+                    </RequireAuth>
+                  }
+                />
+                <Route
+                  path="/deliveries"
+                  element={
+                    <RequireAuth>
+                      <Deliveries />
+                    </RequireAuth>
+                  }
+                />
+                <Route
+                  path="/suppliers"
+                  element={
+                    <RequireAuth>
+                      <Suppliers />
+                    </RequireAuth>
+                  }
+                />
+              </Routes>
+            </SidebarContextProvider>
+          </AuthContextProvider>
+        </BrowserRouter>
+      </NextUIProvider>
     </>
   );
 }
