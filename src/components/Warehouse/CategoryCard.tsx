@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import Button from "../Button";
 
 export default function CategoryCard() {
+    const navigate = useNavigate(); 
   return (
     <div className="w-72 h-96 bg-neutral-200 flex flex-col justify-around items-center p-8 rounded-lg">
       <img
@@ -10,7 +12,7 @@ export default function CategoryCard() {
       ></img>
       <h2 className="text-2xl">Category 1</h2>
       <span className="text-sm">Total items: 320</span>
-      <Button orders="complete">Preview</Button>
+      <Button orders="complete" onClick={() => navigate('./category')}>Preview</Button>
     </div>
   );
 }
