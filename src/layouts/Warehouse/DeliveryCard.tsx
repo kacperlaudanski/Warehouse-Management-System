@@ -26,28 +26,24 @@ export default function DeliveryCard({deliveryID, supplier, address, date}: Deli
               <tbody>
                 <tr className="bg-blue-300">
                   <td className="border-1 border-neutral-500 p-2">Product</td>
-                  <td className="border-1 border-neutral-500 p-2">ID</td>
-                  <td className="border-1 border-neutral-500 p-2">Location</td>
+                  <td className="border-1 border-neutral-500 p-2">Amount</td>
                 </tr>
                 <tr>
                   <td className="border-1 border-neutral-500 p-2">Cups</td>
-                  <td className="border-1 border-neutral-500 p-2">48756</td>
-                  <td className="border-1 border-neutral-500 p-2">R54</td>
+                  <td className="border-1 border-neutral-500 p-2">10</td>
                 </tr>
                 <tr>
                   <td className="border-1 border-neutral-500 p-2">Cups</td>
-                  <td className="border-1 border-neutral-500 p-2">48756</td>
-                  <td className="border-1 border-neutral-500 p-2">R54</td>
+                  <td className="border-1 border-neutral-500 p-2">10</td>
                 </tr>
                 <tr>
                   <td className="border-1 border-neutral-500 p-2">Cups</td>
-                  <td className="border-1 border-neutral-500 p-2">48756</td>
-                  <td className="border-1 border-neutral-500 p-2">R54</td>
+                  <td className="border-1 border-neutral-500 p-2">10</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <Button orders="complete">Complete an order</Button>
+          <Button orders="complete">Manage delivery</Button>
         </div>
       </>
     )
