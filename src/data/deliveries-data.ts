@@ -1,7 +1,7 @@
-import { createData } from "../utilities/createData";
+import { createDeliveryData } from "../utilities/createData";
 
 export const deliveriesData = [
-  createData(
+  createDeliveryData(
     1,
     "Cups",
     "product_1_ID",
@@ -9,7 +9,7 @@ export const deliveriesData = [
     "R43, P05, W23",
     "Pending"
   ),
-  createData(
+  createDeliveryData(
     2,
     "Plates",
     "product_2_ID",
@@ -17,7 +17,7 @@ export const deliveriesData = [
     "T13, K45, Y76",
     "Canceled"
   ),
-  createData(
+  createDeliveryData(
     3,
     "Pillows",
     "product_3_ID",
@@ -25,7 +25,7 @@ export const deliveriesData = [
     "J43, F75, U43",
     "In process"
   ),
-  createData(
+  createDeliveryData(
     4,
     "Pillows",
     "product_4_ID",
@@ -33,7 +33,7 @@ export const deliveriesData = [
     "R65, C43, S53",
     "Pending"
   ),
-  createData(
+  createDeliveryData(
     5,
     "Towels",
     "product_5_ID",
@@ -41,7 +41,7 @@ export const deliveriesData = [
     "R90, A03, V53",
     "In process"
   ),
-  createData(
+  createDeliveryData(
     1,
     "Cups",
     "product_1_ID",
@@ -49,7 +49,7 @@ export const deliveriesData = [
     "R43, P05, W23",
     "Pending"
   ),
-  createData(
+  createDeliveryData(
     2,
     "Plates",
     "product_2_ID",
@@ -57,7 +57,7 @@ export const deliveriesData = [
     "T13, K45, Y76",
     "Canceled"
   ),
-  createData(
+  createDeliveryData(
     3,
     "Pillows",
     "product_3_ID",
@@ -65,7 +65,7 @@ export const deliveriesData = [
     "J43, F75, U43",
     "Pending"
   ),
-  createData(
+  createDeliveryData(
     4,
     "Pillows",
     "product_4_ID",
@@ -73,7 +73,7 @@ export const deliveriesData = [
     "R65, C43, S53",
     "Pending"
   ),
-  createData(
+  createDeliveryData(
     5,
     "Towels",
     "product_5_ID",
@@ -81,7 +81,7 @@ export const deliveriesData = [
     "R90, A03, V53",
     "In process"
   ),
-  createData(
+  createDeliveryData(
     1,
     "Cups",
     "product_1_ID",
@@ -89,7 +89,7 @@ export const deliveriesData = [
     "R43, P05, W23",
     "Pending"
   ),
-  createData(
+  createDeliveryData(
     2,
     "Plates",
     "product_2_ID",
@@ -97,7 +97,7 @@ export const deliveriesData = [
     "T13, K45, Y76",
     "Canceled"
   ),
-  createData(
+  createDeliveryData(
     3,
     "Pillows",
     "product_3_ID",
@@ -105,7 +105,7 @@ export const deliveriesData = [
     "J43, F75, U43",
     "Pending"
   ),
-  createData(
+  createDeliveryData(
     4,
     "Pillows",
     "product_4_ID",
@@ -113,7 +113,7 @@ export const deliveriesData = [
     "R65, C43, S53",
     "In process"
   ),
-  createData(
+  createDeliveryData(
     5,
     "Towels",
     "product_5_ID",

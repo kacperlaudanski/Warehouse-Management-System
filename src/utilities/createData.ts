@@ -1,4 +1,4 @@
-export function createData(
+export function createDeliveryData(
     number: number,
     supplier: string,
     address: string,
@@ -7,4 +7,14 @@ export function createData(
     status: string
   ) {
     return { number, supplier, address, deliveryDate, products, status };
+  }
+
+  export function createReturnsData(
+    number: number,
+    name: string,
+    address: string,
+    description: string,
+    products: string,
+  ) {
+    return { number, name, address, description, products};
   }
