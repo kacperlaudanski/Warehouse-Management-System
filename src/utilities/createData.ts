@@ -18,3 +18,15 @@ export function createDeliveryData(
   ) {
     return { number, name, address, description, products};
   }
+
+  export function createStockData(
+    number: number,
+    product: string, 
+    id: string,
+    description: string,
+    location: string, 
+    stock: number, 
+  ) {
+    return { number, product, id, description, location, stock }
+  }
+  
