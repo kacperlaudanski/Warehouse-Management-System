@@ -5,41 +5,46 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Button from "../../components/Button";
-import { Ban, PackageCheck} from "lucide-react";
+import { Ban, PackageCheck, Printer } from "lucide-react";
 import { StyledTableCell } from "../Table/StyledTableCell";
 import { StyledTableRow } from "../Table/StyledTableRow";
-import { returnsData } from "../../data/returns-data";
+import { deliveriesData } from "../../data/deliveries-data";
 
-export default function ReturnsTable() {
+export default function DeliveryTable() {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
             <StyledTableCell>No</StyledTableCell>
-            <StyledTableCell align="center">Name</StyledTableCell>
+            <StyledTableCell align="center">Supplier</StyledTableCell>
             <StyledTableCell align="center">Address</StyledTableCell>
-            <StyledTableCell align="center">Return description</StyledTableCell>
-            <StyledTableCell align="center">Returned products</StyledTableCell>
+            <StyledTableCell align="center">Delivery date</StyledTableCell>
+            <StyledTableCell align="center">Products</StyledTableCell>
+            <StyledTableCell align="center">Status</StyledTableCell>
             <StyledTableCell align="center">Action</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {returnsData.map((data) => (
-            <StyledTableRow key={data.number}>
+          {deliveriesData.map((delivery) => (
+            <StyledTableRow key={delivery.number}>
               <StyledTableCell component="th" scope="row">
-                {data.number}
+                {delivery.number}
               </StyledTableCell>
-              <StyledTableCell align="center">{data.name}</StyledTableCell>
-              <StyledTableCell align="center">{data.address}</StyledTableCell>
+              <StyledTableCell align="center">{delivery.supplier}</StyledTableCell>
+              <StyledTableCell align="center">{delivery.address}</StyledTableCell>
               <StyledTableCell align="center">
-                {data.description}
+                {delivery.deliveryDate}
               </StyledTableCell>
-              <StyledTableCell align="center">{data.products}</StyledTableCell>
+              <StyledTableCell align="center">{delivery.products}</StyledTableCell>
+              <StyledTableCell align="center">{delivery.status}</StyledTableCell>
               <StyledTableCell align="center">
                 <div className="flex justify-center">
                   <Button variant="ghost" icon="actionButton">
-                  <PackageCheck />
+                    <PackageCheck />
+                  </Button>
+                  <Button variant="ghost" icon="actionButton">
+                    <Printer />
                   </Button>
                   <Button variant="ghost" icon="actionButton">
                     <Ban />
