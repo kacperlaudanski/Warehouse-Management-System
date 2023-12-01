@@ -1,7 +1,5 @@
 import Main from "./Main";
-import Input from "../components/Input";
-import { Search } from "lucide-react";
-import CustomizedTables from "../layouts/Orders/HistoryTable";
+import HistoryOrders from "../layouts/Orders/HistoryTable";
 import SearchBar from "../components/SearchBar";
 
 export default function OrdersHistory() {
@@ -13,7 +11,7 @@ export default function OrdersHistory() {
           <SearchBar />
         </div>
         <div className="w-full">
-           <CustomizedTables />
+           <HistoryOrders />
         </div>
       </div>
     </Main>
