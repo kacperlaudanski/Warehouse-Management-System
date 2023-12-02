@@ -5,7 +5,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Button from "../../components/Button";
-import { Ban, Edit, Package, PackageCheck, X } from "lucide-react";
+import { Edit, Package, X } from "lucide-react";
 import { StyledTableCell } from "../Table/StyledTableCell";
 import { StyledTableRow } from "../Table/StyledTableRow";
 import { suppliersData } from "../../data/suppliers-data";
