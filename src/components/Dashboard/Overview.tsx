@@ -5,7 +5,7 @@ import { dashboardOverviewData } from "../../data/dashboard-overview-data";
 export default function Overview() {
   const navigate = useNavigate();
   return (
-    <div className="w-full h-1/3 grid grid-rows-1 grid-cols-3 grid-flow-col gap-2 mb-2">
+    <div className="w-full lg:max-h-40 sm:h-full h-1/3 grid lg:grid-rows-1 lg:grid-cols-3 grid-flow-col sm:grid-rows-3 sm:grid-cols-1 gap-2 mb-2">
       {" "}
       {dashboardOverviewData.map((item, index) => {
         return (
