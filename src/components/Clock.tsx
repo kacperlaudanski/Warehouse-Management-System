@@ -19,7 +19,7 @@ export default function Clock() {
     return date.toLocaleTimeString("en-US");
   }
   return (
-    <div className="w-full h-1/3 mb-2 bg-white rounded-2xl flex flex-col items-end justify-center text-right p-2">
+    <div className="w-full max-h-40 h-1/3 mb-2 bg-white rounded-2xl flex flex-col items-end justify-center text-right p-2">
       <div className="w-full h-1/5 text-lg m-2 text-neutral-400">
         {currentDate()}
       </div>

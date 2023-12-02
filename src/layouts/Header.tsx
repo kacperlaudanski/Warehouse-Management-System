@@ -23,7 +23,7 @@ export default function Header() {
         >
           <Menu />
         </Button>
-        <img src={Logo} alt="logo" />
+        <img src={Logo} alt="logo" className="mx-4"/>
       </div>
       {currentUser ? (
         <div className="w-40 flex items-center justify-between">
