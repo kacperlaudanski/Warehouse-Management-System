@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <header className="w-screen h-24 bg-blue-400 px-8 flex items-center fixed justify-between z-50">
-      <div className="w-24 flex items-center justify-between">
+      <div className="w-40 flex items-center justify-between">
         <Button
           icon="iconButton"
           screen="mobile"
@@ -23,7 +23,7 @@ export default function Header() {
         >
           <Menu />
         </Button>
-        <img src={Logo} alt="logo" className="mx-4"/>
+        <img src={Logo} alt="logo" className="w-24"/>
       </div>
       {currentUser ? (
         <div className="w-40 flex items-center justify-between">
