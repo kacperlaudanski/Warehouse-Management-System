@@ -11,7 +11,7 @@ interface Order {
 export default function OrderCard({ orderID, orderer, address, date }: Order) {
   return (
     <>
-      <div className="w-72 h-min-96 bg-neutral-100 m-4 p-4 rounded-xl flex flex-col justify-between items-start">
+      <div className="lg:w-72 sm:w-full h-min-96 bg-neutral-100 lg:m-4 sm:m-0 sm:mt-4 p-4 rounded-xl flex flex-col justify-between items-start">
         <div className="w-full flex justify-between items-center">
           <h2 className="text-xl mb-2">Order: {orderID}</h2>
           <Button variant="ghost">
