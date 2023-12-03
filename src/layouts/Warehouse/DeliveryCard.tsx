@@ -11,7 +11,7 @@ type DeliveryCard = {
 export default function DeliveryCard({deliveryID, supplier, address, date}: DeliveryCard){
     return (
         <>
-        <div className="w-72 h-min-96 bg-neutral-100 m-4 p-4 rounded-xl flex flex-col justify-between items-start">
+        <div className="sm:w-full lg:w-72 h-min-96 bg-neutral-100 sm:mx-auto m-4 p-4 rounded-xl flex flex-col justify-between items-start">
           <div className="w-full flex justify-between items-center">
             <h2 className="text-xl mb-2">Delivery: {deliveryID}</h2>
             <Button variant="ghost">
