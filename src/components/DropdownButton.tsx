@@ -13,7 +13,6 @@ export default function DropdownButton({
   menuItems,
 }: DropdownButton) {
   const [isDropdownShown, setDropdown] = useState(false);
-  console.log(`..${window.location.pathname}`)
   return (
     <>
       <Button
