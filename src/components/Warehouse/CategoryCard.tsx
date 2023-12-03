@@ -4,7 +4,7 @@ import Button from "../Button";
 export default function CategoryCard() {
     const navigate = useNavigate(); 
   return (
-    <div className="w-72 h-96 bg-neutral-200 flex flex-col justify-around items-center p-8 rounded-lg">
+    <div className="sm:w-full lg:w-72 h-96 bg-neutral-200 flex flex-col justify-around items-center p-8 rounded-lg">
       <img
         src=""
         alt="category-image"
