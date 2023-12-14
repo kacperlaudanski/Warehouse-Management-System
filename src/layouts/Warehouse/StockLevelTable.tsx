@@ -20,7 +20,7 @@ export default function StockLevelTable() {
             <StyledTableCell align="center">Product</StyledTableCell>
             <StyledTableCell align="center">Product ID</StyledTableCell>
             <StyledTableCell align="center">Description</StyledTableCell>
-            <StyledTableCell align="center">Status</StyledTableCell>
+            <StyledTableCell align="center">Location</StyledTableCell>
             <StyledTableCell align="center">Stock</StyledTableCell>
             <StyledTableCell align="center">Action</StyledTableCell>
           </TableRow>

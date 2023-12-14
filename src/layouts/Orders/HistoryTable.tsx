@@ -20,7 +20,6 @@ export default function HistoryOrders() {
             <StyledTableCell align="center">Order ID</StyledTableCell>
             <StyledTableCell align="center">Client</StyledTableCell>
             <StyledTableCell align="center">Address</StyledTableCell>
-            <StyledTableCell align="center">Status</StyledTableCell>
             <StyledTableCell align="center">Date</StyledTableCell>
             <StyledTableCell align="center">Action</StyledTableCell>
           </TableRow>
@@ -34,7 +33,6 @@ export default function HistoryOrders() {
               <StyledTableCell align="center">{order.id}</StyledTableCell>
               <StyledTableCell align="center">{order.client}</StyledTableCell>
               <StyledTableCell align="center">{order.address}</StyledTableCell>
-              <StyledTableCell align="center">{order.status}</StyledTableCell>
               <StyledTableCell align="center">{order.date}</StyledTableCell>
               <StyledTableCell align="center">
                 <div className="flex justify-center">

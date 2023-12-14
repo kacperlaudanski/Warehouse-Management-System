@@ -10,6 +10,7 @@ export default function SectionsList(){
                     name={section.name}
                     isOccupied={section.isOccupied}
                     fillPercentage={section.fillPercentage}
+                    activeSection={section.isActive}
                   />
                 )
             })}

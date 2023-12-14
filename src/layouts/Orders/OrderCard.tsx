@@ -22,27 +22,27 @@ export default function OrderCard({ orderID, orderer, address, date }: Order) {
           <span className="text-sm">Orderer: {orderer}</span>
           <span className="text-sm">Address: {address}</span>
           <span className="text-sm">Date: {date}</span>
-          <table className="w-full border-1 border-solid border-neutral-500 rounded-xl table-fixed my-5">
+          <table className="w-full border-1 border-solid border-neutral-500 table-fixed my-5">
             <tbody>
               <tr className="bg-blue-300">
-                <td className="border-1 border-neutral-500 p-2">Product</td>
-                <td className="border-1 border-neutral-500 p-2">ID</td>
-                <td className="border-1 border-neutral-500 p-2">Location</td>
+                <td className="border-1 border-neutral-400 p-2">Product</td>
+                <td className="border-1 border-neutral-400 p-2">ID</td>
+                <td className="border-1 border-neutral-400 p-2">Location</td>
               </tr>
               <tr>
-                <td className="border-1 border-neutral-500 p-2">Cups</td>
-                <td className="border-1 border-neutral-500 p-2">48756</td>
-                <td className="border-1 border-neutral-500 p-2">R54</td>
+                <td className="border-1 border-neutral-400 p-2">Cups</td>
+                <td className="border-1 border-neutral-400 p-2">48756</td>
+                <td className="border-1 border-neutral-400 p-2">R54</td>
               </tr>
               <tr>
-                <td className="border-1 border-neutral-500 p-2">Cups</td>
-                <td className="border-1 border-neutral-500 p-2">48756</td>
-                <td className="border-1 border-neutral-500 p-2">R54</td>
+                <td className="border-1 border-neutral-400 p-2">Cups</td>
+                <td className="border-1 border-neutral-400 p-2">48756</td>
+                <td className="border-1 border-neutral-400 p-2">R54</td>
               </tr>
               <tr>
-                <td className="border-1 border-neutral-500 p-2">Cups</td>
-                <td className="border-1 border-neutral-500 p-2">48756</td>
-                <td className="border-1 border-neutral-500 p-2">R54</td>
+                <td className="border-1 border-neutral-400 p-2">Cups</td>
+                <td className="border-1 border-neutral-400 p-2">48756</td>
+                <td className="border-1 border-neutral-400 p-2">R54</td>
               </tr>
             </tbody>
           </table>
