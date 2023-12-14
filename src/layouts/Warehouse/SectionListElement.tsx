@@ -4,14 +4,16 @@ interface Section {
   name: string;
   isOccupied: boolean;
   fillPercentage: number;
+  activeSection: boolean; 
 }
 export default function SectionListElement({
   name,
   isOccupied,
   fillPercentage,
+  activeSection
 }: Section) {
   return (
-    <li className="w-full h-1/5 flex justify-between items-center bg-sky-100 py-2 px-4 rounded-lg">
+    <li className={`w-full h-1/5 flex justify-between items-center ${activeSection && `bg-sky-100`} py-2 px-4 rounded-lg`}>
       <h3>{name}</h3>
       <Badge color={isOccupied ? "failure" : "success"}>
         {isOccupied ? "Used" : "Empty"}
