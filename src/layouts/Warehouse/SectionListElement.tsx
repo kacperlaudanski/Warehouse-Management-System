@@ -10,7 +10,7 @@ export default function SectionListElement({
   name,
   isOccupied,
   fillPercentage,
-  activeSection
+  activeSection, 
 }: Section) {
   return (
     <li className={`w-full h-1/5 flex justify-between items-center ${activeSection && `bg-sky-100`} py-2 px-4 rounded-lg`}>

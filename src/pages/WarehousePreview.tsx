@@ -11,7 +11,7 @@ export default function WarehousePreview() {
         <div className="w-9/12 h-full flex flex-col bg-white rounded-3xl p-8 pb-16 shadow-[7px_0px_7px_0px_#00000024] z-20">
           <h1 className="text-2xl tracking-wider">Warehouse | Preview</h1>
           <div className="w-full h-2/4 pt-4">
-            <h2 className="text-xl tracking-wider">Section 2</h2>
+            <h2 className="text-xl tracking-wider mt-4">Section 2</h2>
             <div className="w-full h-4/5 mt-4 grid grid-rows-2 grid-cols-4 grid-flow-col gap-1 place-items-center">
               <Stillage />
               <Stillage />

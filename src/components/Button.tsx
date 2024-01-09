@@ -24,6 +24,8 @@ const buttonStyles = cva(["rounded h-11 rounded-md transition-color duration-300
       logout: ['w-24 bg-neutral-300 text-slate-500 hover:bg-neutral-800'], 
       relocate: ['w-full h-2/5 bg-gradient-to-r from-indigo-700 to-blue-500 hover:bg-blue-400 text-white'],
       add:['w-36 h-11 text-white bg-blue-400 hover:bg-blue-500 text-white text-sm rounded-lg'], 
+      getStarted: ['w-48 h-12 rounded-l-full text-white rounded-e-full bg-indigo-600 hover:bg-indigo-900 shadow-[0_25px_30px_-10px_rgba(0,0,0,0.3)]'],
+      landingLogin:['w-32 bg-red-400 rounded-l-full rounded-e-full text-white']
     },
     icon: {
       iconButton: ['w-11 h-11 text-white flex items-center justify-center'],
